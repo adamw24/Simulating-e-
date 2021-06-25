@@ -40,7 +40,7 @@ std1 = printResults(data1)
 
 #Improved simulation that reduces variance by using antithetic variables    
 
-print("Simulation 2: using anithetic variables to reduce variance")
+print("Simulation 2: using antithetic variables to reduce variance")
 data2 = np.zeros(numTrials)
 n = numTrials
 s1, s2 = 0, 0  
