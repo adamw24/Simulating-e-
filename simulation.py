@@ -81,6 +81,9 @@ print("", obs2, "times as many observations for Simulation 2, (2e-2), compared t
 print("", obs1, "times as many observations for Simulation 1 to have same variance as Simulation 2.")
 print(" Simulation 2 is", obs1,"/",obs2,"=", round(obs1/obs2,4), "times as efficient as Simulation 1.\n" )
 
+
+#Show histogram of the datasets for both simulations 
+
 # data = np.zeros(numTrials*2)
 # data = data.reshape(numTrials,2)
 # for i in range(numTrials):
