@@ -2,8 +2,9 @@ import math
 import statistics
 import random
 import numpy as np
+import matplotlib.pyplot as plt
 
-numTrials = 100000
+numTrials = 200000
 
 def printResults(data):
     avgCount = statistics.mean(data)
@@ -76,6 +77,21 @@ std2 = printResults(data2)
 obs2 = round((2*math.e -2)/math.e,4)
 obs1 = round((std1/std2)**2,4)
 print("Calculating improved efficiency: ")
-print("",obs2, "times as many observations for Simulation 2, (2e-2), compared to Simulation 1 (e).")
-print(" Would need", obs1, "times as many observations for Simulation 1 to have same variance as Simulation 2.")
+print("", obs2, "times as many observations for Simulation 2, (2e-2), compared to Simulation 1 (e).")
+print("", obs1, "times as many observations for Simulation 1 to have same variance as Simulation 2.")
 print(" Simulation 2 is", obs1,"/",obs2,"=", round(obs1/obs2,4), "times as efficient as Simulation 1.\n" )
+
+# data = np.zeros(numTrials*2)
+# data = data.reshape(numTrials,2)
+# for i in range(numTrials):
+#     data[i][0] = data1[i]
+#     data[i][1] = data2[i]
+#plt.hist(data, bins=np.arange(2,9,0.5), density=True, label=["a","Simple Simulation"])
+plt.title("Histogram of Observations for Simulation 1 and Simulation 2")
+plt.hist(data1, bins=np.arange(2,8,0.25), label="Simulation 1")
+plt.hist(data2, bins=np.arange(2,8,0.25), label="Simulation 2")
+plt.legend(prop={'size': 10})
+plt.ylabel("# of Occurences")
+plt.xlabel("# of Observations")
+plt.xticks(np.arange(2,8,0.5))
+plt.show()
